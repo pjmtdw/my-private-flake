@@ -6,7 +6,7 @@ template directory for haskell project using nix
 - **just** ... task runner
 
 # usage
-1. copy this directory to somewhere else
+1. run `nix flake new -t github:pjmtdw/my-private-flake#haskell ./my-hakell-project`
 2. change `app_name := ...` in `./justfile` to your own
 3. run `just init`
 4. run `just develop` to start shell which has `ghc` and `haskell-language-server` in it. you can use any editor.
