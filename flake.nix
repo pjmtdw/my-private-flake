@@ -5,7 +5,7 @@
 
     templates = {
 
-      trivial = {
+      haskell = {
         path = ./haskell;
         description = "haskell template";
       };
