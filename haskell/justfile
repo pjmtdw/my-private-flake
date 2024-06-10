@@ -1,0 +1,20 @@
+app_name := "my-awesome-command"
+
+default:
+  just -l
+
+show:
+  nix flake show --option allow-import-from-derivation true
+
+init:
+  nix shell nixpkgs#cabal-install nixpkgs#ghc \
+  --command sh -c "cabal init -n -p {{app_name}} --license=MIT --language=GHC2021 --source-dir=app"
+
+build:
+  nix build ".#{{app_name}}"
+
+run:
+  nix run ".#{{app_name}}"
+
+develop:
+  nix develop
